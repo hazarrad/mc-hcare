@@ -1,7 +1,7 @@
 package com.hcare.transformers;
 
 import com.hcare.dto.PatientsDTO;
-import com.hcare.models.Patients;
+import com.hcare.model.Patients;
 
 public class PatientsTransfomer extends Transformer<Patients, PatientsDTO> {
 
@@ -10,7 +10,7 @@ public class PatientsTransfomer extends Transformer<Patients, PatientsDTO> {
 		if (dto == null) {
 			return null;
 		}
-		return new Patients();
+		return new Patients(dto.getId(),dto.getEmail(),dto.getFirstName(),dto.getSurname(),dto.getDateInscription(),dto.getPassword());
 
 	}
 
@@ -19,7 +19,7 @@ public class PatientsTransfomer extends Transformer<Patients, PatientsDTO> {
 		if (entity == null) {
 			return null;
 		}
-		return new PatientsDTO();
+		return new PatientsDTO(entity.getId(),entity.getEmail(),entity.getFirstName(),entity.getSurname(),entity.getDateInscription(),entity.getPassword());
 	}
 
 }

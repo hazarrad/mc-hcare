@@ -1,7 +1,7 @@
 package com.hcare.transformers;
 
 import com.hcare.dto.SessionsDTO;
-import com.hcare.models.Sessions;
+import com.hcare.model.Sessions;
 
 public class SessionTransformer extends Transformer<Sessions, SessionsDTO> {
 
@@ -10,7 +10,7 @@ public class SessionTransformer extends Transformer<Sessions, SessionsDTO> {
 		if (dto == null) {
 			return null;
 		}
-		return new Sessions();
+		return new Sessions(dto.getId(),dto.getSessionDate());
 
 	}
 
@@ -19,7 +19,7 @@ public class SessionTransformer extends Transformer<Sessions, SessionsDTO> {
 		if (entity == null) {
 			return null;
 		}
-		return new SessionsDTO();
+		return new SessionsDTO(entity.getId(),entity.getSessionDate());
 	}
 
 }

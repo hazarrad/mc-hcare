@@ -3,8 +3,15 @@ spring:
     active: local
   application:
     name: demo
-  mvc.throw-exception-if-no-handler-found: true
-  resources.add-mappings: false
+#  datasource:
+#    password: prefab2021
+#    url: jdbc:postgresql://localhost:5432/hcare
+#    username: postgres
+#  jpa:
+#    hibernate:
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      ddl-auto: create
+#      
   datasource:
     url: jdbc:h2:mem:myDb;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
@@ -13,7 +20,8 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create
-  h2:
-    console:
-      enabled: true  
+      ddl-auto: update
+      
+      
+#   token github   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
+#new token   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

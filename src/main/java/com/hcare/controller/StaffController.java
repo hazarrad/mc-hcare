@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hcare.dto.PatientsDTO;
 import com.hcare.dto.staffDTO;
+import com.hcare.service.StaffService;
 import com.hcare.dto.staffDTO;
-import com.hcare.services.StaffService;
 
 
 @CrossOrigin(origins = "*")
 @RestController
 public class StaffController {
 
-	@Autowired
+	
 	private StaffService staffService;
 
 	@PostMapping(path = "/addStaff")
@@ -28,12 +29,12 @@ public class StaffController {
 		return staffService.save(rdto);
 	}
 
-	@GetMapping(path = "/findAll")
+	@GetMapping(path = "/findAllStaffs")
 	public Iterable<staffDTO> findAll() {
 		return staffService.findAll();
 	}
 
-	@GetMapping(path = "/deleteById")
+	@GetMapping(path = "/deleteStaffById")
 	public String deleteById(@RequestParam Long id) {
 		staffService.deleteById(id);
 		return "staff has been deleted";
@@ -51,6 +52,12 @@ public class StaffController {
 		}
 
 		return editedstaffDTO;
+	}
+
+	@GetMapping(path = "/staffLogin")
+	public staffDTO staffLogin(@RequestParam String email, @RequestParam String password) {
+		return staffService.findAllByEmailAndPassword(email, password);
+		
 	}
 
 	@GetMapping(path = "/getStaff")

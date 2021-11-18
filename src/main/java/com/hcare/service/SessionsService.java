@@ -1,4 +1,4 @@
-package com.hcare.services;
+package com.hcare.service;
 
 import com.hcare.dto.SessionsDTO;
 

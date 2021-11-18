@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hcare.dto.SessionsDTO;
-import com.hcare.services.SessionsService;
+import com.hcare.service.SessionsService;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -26,7 +26,7 @@ public class SessionController {
 		return sessionsService.save(rdto);
 	}
 
-	@GetMapping(path = "/findAll")
+	@GetMapping(path = "/findAllSessions")
 	public Iterable<SessionsDTO> findAll() {
 		return sessionsService.findAll();
 	}

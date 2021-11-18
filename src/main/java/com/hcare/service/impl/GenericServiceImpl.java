@@ -1,11 +1,11 @@
-package com.hcare.servicesImpl;
+package com.hcare.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
-import com.hcare.services.GenericService;
+import com.hcare.service.GenericService;
 import com.hcare.transformers.Transformer;
 
 public class GenericServiceImpl<Entity, DTO, Key> implements GenericService<DTO, Key> {
