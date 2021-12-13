@@ -1,9 +1,9 @@
 package com.hcare.service;
 
-import com.hcare.dto.staffDTO;
+import com.hcare.dto.StaffDTO;
 
-public interface StaffService extends GenericService<staffDTO, Long> {
+public interface StaffService extends GenericService<StaffDTO, Long> {
 
-	staffDTO findAllByEmailAndPassword(String email, String password);
+	StaffDTO findAllByEmailAndPassword(String email, String password);
 
 }

@@ -1,12 +1,12 @@
 package com.hcare.transformers;
 
-import com.hcare.dto.staffDTO;
+import com.hcare.dto.StaffDTO;
 import com.hcare.model.staff;
 
-public class StaffTransfomer extends Transformer<staff, staffDTO> {
+public class StaffTransfomer extends Transformer<staff, StaffDTO> {
 
 	@Override
-	public staff toEntity(staffDTO dto) {
+	public staff toEntity(StaffDTO dto) {
 		if (dto == null) {
 			return null;
 		}
@@ -15,11 +15,11 @@ public class StaffTransfomer extends Transformer<staff, staffDTO> {
 	}
 
 	@Override
-	public staffDTO toDTO(staff entity) {
+	public StaffDTO toDTO(staff entity) {
 		if (entity == null) {
 			return null;
 		}
-		return new staffDTO(entity.getId(),entity.getEmail(),entity.getFirstName(),entity.getSurname(),entity.getDateInscription(),entity.getPassword(),entity.getRole());
+		return new StaffDTO(entity.getId(),entity.getEmail(),entity.getFirstName(),entity.getSurname(),entity.getDateInscription(),entity.getPassword(),entity.getRole());
 	}
 
 }

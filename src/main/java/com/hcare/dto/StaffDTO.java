@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class staffDTO {
+public class StaffDTO {
 
 	private Long id;
 	private String email;
